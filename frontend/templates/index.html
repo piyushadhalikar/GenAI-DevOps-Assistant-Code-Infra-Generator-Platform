@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GenAI DevOps Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>GenAI DevOps Assistant</h1>
+        <p>Generate Docker, Jenkins, Kubernetes, Terraform & Linux solutions instantly</p>
+
+        <form method="POST">
+            <textarea name="task" placeholder="Enter your DevOps request here...">{{ user_input }}</textarea>
+            <button type="submit">Generate</button>
+        </form>
+
+        <h2>Generated Output:</h2>
+        <div class="output-box">
+            <textarea readonly class="output-area">{{ output }}</textarea>
+        </div>
+    </div>
+</body>
+</html>
