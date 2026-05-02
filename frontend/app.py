@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-FASTAPI_URL = "http://127.0.0.1:8000/generate"
+FASTAPI_URL = "http://backend:8000/generate"
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
