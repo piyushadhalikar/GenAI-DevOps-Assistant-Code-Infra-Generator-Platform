@@ -8,9 +8,15 @@ pipeline{
                 echo "code clone done"
             }
         }
-        stage("build"){
-            steps{
-                sh "docker build -t genai-devops:latest ."
+        stage('Build Backend') {
+            steps {
+                sh 'docker build -f docker/backend/Dockerfile -t genai-devops-backend .'
+            }
+        }
+
+        stage('Build Frontend') {
+            steps {
+                sh 'docker build -f docker/frontend/Dockerfile -t genai-devops-frontend .'
             }
         }
         stage("test"){
@@ -18,12 +24,22 @@ pipeline{
                 echo "code testing done"
             }
         }
-        stage("push to DockerHub"){
+        stage("push backend image to DockerHub"){
             steps{
                 withCredentials([usernamePassword(credentialsId:"dockerHubCred",usernameVariable:"dockerHubUser",passwordVariable:"dockerHubPass")]){
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                sh "docker image tag genai-devops:latest ${env.dockerHubUser}/genai-devops:latest"
-                sh "docker push ${env.dockerHubUser}/genai-devops:latest"
+                sh "docker image tag genai-devops-backend:latest ${env.dockerHubUser}/genai-devops-backend:latest"
+                sh "docker push ${env.dockerHubUser}/genai-devops-backend:latest"
+                echo "code pushed to dockerhub"
+                }
+            }
+        }
+        stage("push frontend image to DockerHub"){
+            steps{
+                withCredentials([usernamePassword(credentialsId:"dockerHubCred",usernameVariable:"dockerHubUser",passwordVariable:"dockerHubPass")]){
+                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
+                sh "docker image tag genai-devops-frontend:latest ${env.dockerHubUser}/genai-devops-frontend:latest"
+                sh "docker push ${env.dockerHubUser}/genai-devops-frontend:latest"
                 echo "code pushed to dockerhub"
                 }
             }

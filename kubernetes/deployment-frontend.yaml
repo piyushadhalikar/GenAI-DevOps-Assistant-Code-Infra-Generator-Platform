@@ -1,0 +1,23 @@
+# Frontend Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: genai-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: genai-frontend
+  template:
+    metadata:
+      labels:
+        app: genai-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: genai-devops-frontend:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: FASTAPI_URL
+          value: "http://genai-backend:8000/generate"
