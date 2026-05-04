@@ -2,7 +2,7 @@
 
 Built a containerized microservices GenAI DevOps platform with Flask frontend, FastAPI backend, Groq LLM integration, Docker Compose orchestration, secure environment variable injection, and AWS EC2 deployment.
 
-# User Flow - 
+## User Flow - 
 
 User enters DevOps request
         ↓
@@ -16,7 +16,7 @@ Generated DevOps Output
         ↓
 Readable Output Box on Web Page
 
-# Project Folder structure - 
+## Project Folder structure - 
 
 GenAI-DevOps-Assistant/
 │
