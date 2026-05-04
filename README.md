@@ -16,27 +16,12 @@ Generated DevOps Output
         ↓
 Readable Output Box on Web Page
 
-## Project Folder structure - 
+## Architechture
 
-GenAI-DevOps-Assistant/
-│
-├── backend/
-│   ├── app/
-│   │   ├── main.py
-│   │   ├── llm.py
-│   │   └── formatter.py
-│   ├── requirements.txt
-│   └── Dockerfile
-│
-├── frontend/
-│   ├── app.py
-│   ├── templates/
-│   ├── static/
-│   ├── requirements.txt
-│   └── Dockerfile
-│
-├── .env
-├── docker-compose.yml
-├── Jenkinsfile
-├── terraform/
-└── kubernetes/
+User → FastAPI → Groq LLM (Llama 3)
+                     ↓
+            DevOps Prompt Engine
+                     ↓
+        Docker / Jenkins / K8s output
+                     ↓
+            JSON Response API
