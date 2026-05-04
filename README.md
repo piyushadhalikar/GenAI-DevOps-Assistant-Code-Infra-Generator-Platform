@@ -19,13 +19,13 @@ Readable Output Box on Web Page
 
 ## Architechture-
 
-User → FastAPI → Groq LLM (Llama 3)
-                     ↓
-            DevOps Prompt Engine
-                     ↓
-        Docker / Jenkins / K8s output
-                     ↓
-            JSON Response API
+User → Frontend Web Page (HTML/CSS/JS) → FastAPI → Groq LLM (Llama 3)
+                                                     ↓
+                                            DevOps Prompt Engine
+                                                     ↓
+                                        Docker / Jenkins / K8s output
+                                                     ↓
+                                            JSON Response API
 
 ## Tech Stack- 
 
