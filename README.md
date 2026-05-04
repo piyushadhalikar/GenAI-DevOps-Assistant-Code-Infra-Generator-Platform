@@ -1,5 +1,6 @@
 # GenAI-DevOps-Assistant-Code-Infra-Generator-Platform
-
+I built a GenAI-powered DevOps automation platform using Groq-hosted Llama 3 models. It generates Dockerfiles, Jenkins pipelines, Kubernetes manifests, and Terraform scripts via a FastAPI backend, containerized using Docker, and deployed on AWS EC2 using CI/CD pipelines with Jenkins.
+or
 Built a containerized microservices GenAI DevOps platform with Flask frontend, FastAPI backend, Groq LLM integration, Docker Compose orchestration, secure environment variable injection, and AWS EC2 deployment.
 
 ## User Flow - 
