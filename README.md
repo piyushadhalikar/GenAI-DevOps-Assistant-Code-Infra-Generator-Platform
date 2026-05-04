@@ -16,7 +16,7 @@ Generated DevOps Output
         ↓
 Readable Output Box on Web Page
 
-## Architechture
+## Architechture-
 
 User → FastAPI → Groq LLM (Llama 3)
                      ↓
@@ -25,3 +25,18 @@ User → FastAPI → Groq LLM (Llama 3)
         Docker / Jenkins / K8s output
                      ↓
             JSON Response API
+
+## Tech Stack- 
+
+GenAI:
+Groq API (Llama 3 70B / Mixtral)
+Backend:
+FastAPI
+Uvicorn
+DevOps:
+Linux (Ubuntu EC2)
+Git & GitHub
+Docker
+Jenkins
+Kubernetes (basic YAML deploy)
+Terraform (EC2 provisioning)
